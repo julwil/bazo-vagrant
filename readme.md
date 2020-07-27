@@ -16,6 +16,7 @@ git clone https://github.com/julwil/bazo-miner
 git clone https://github.com/julwil/bazo-client
 git clone https://github.com/julwil/bazo-block-explorer
 ```
+- These folders are shared between your host and the VM.
 - Open a terminal and cd into the bazo-vagrant folder `cd bazo-vagrant` 
 - Start the VM with `vagrant up`
 - After the provisioning of the VM is done, ssh into it with `vagrant ssh`
@@ -28,7 +29,8 @@ git clone https://github.com/julwil/bazo-block-explorer
 ```
 - Use the terminal to start bazo-miner, bazo-client (rest) and bazo-block-explorer in the VM. Hint: You can open as many terminal sessions with the VM as you like. Just open an new terminal and run `vagrant ssh` in the `bazo-vagrant` folder to connect to it.
 - Open a web browser and navigate to http://bazo.local.
+- On your host machine, use an editor of your choice to work on the bazo-projects. The folders are shared with the VM.
 
-###Additional resources
+### Additional resources
 This vagrant box is based on the laravel/homestaed box. 
 https://laravel.com/docs/7.x/homestead
