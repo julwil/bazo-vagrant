@@ -3,9 +3,9 @@
  `C:\Windows\System32\drivers\etc\hosts` on Windows
 -  Add these two new entries:
 ```
-  #CSG-BAZO Project
-  192.168.10.30 bazo.local
-  192.168.10.30 api.bazo.local
+#CSG-BAZO Project
+192.168.10.30 bazo.local
+192.168.10.30 api.bazo.local
 ```
 - Create an empty folder somewhere (e.g. `/BAZO`) for your BAZO projects.
 - Open a [terminal](https://gitforwindows.org) and ``cd BAZO``
