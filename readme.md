@@ -1,37 +1,34 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-homestead.svg"></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/homestead"><img src="https://travis-ci.org/laravel/homestead.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/homestead"><img src="https://poser.pugx.org/laravel/homestead/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/homestead"><img src="https://poser.pugx.org/laravel/homestead/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/homestead"><img src="https://poser.pugx.org/laravel/homestead/license.svg" alt="License"></a>
-</p>
-
-## Introduction
-
-Laravel Homestead is an official, pre-packaged Vagrant box that provides you a wonderful development environment without requiring you to install PHP, a web server, and any other server software on your local machine. No more worrying about messing up your operating system! Vagrant boxes are completely disposable. If something goes wrong, you can destroy and re-create the box in minutes!
-
-Homestead runs on any Windows, Mac, or Linux system, and includes the Nginx web server, PHP 7.4, MySQL, Postgres, Redis, Memcached, Node, and all of the other goodies you need to develop amazing Laravel applications.
-
-Official documentation [is located here](https://laravel.com/docs/homestead).
-
-Ubuntu 20.04 can be found in the branch `20.04` 
-Ubuntu 18.04 can be found in the branch `master`
-
-| Ubuntu LTS | Settler Version | Homestead Version | Branch
-| -----------| -----------     | -----------       | -----------
-| 18.04      | 9.x             | 10.x              | `master`
-| 20.04      | 10.x            | 11.x              | `20.04`
-
-## Developing Homestead
-
-To keep any in-development changes separate from other Homestead installations, create a new project and install
-Homestead from composer, forcing it to use a git checkout.
-
+### Installation Guide
+- open your system's hosts file in a text editor with *admin* privileges.
+ `C:\Windows\System32\drivers\etc\hosts` on Windows
+-  Add these two new entries:
 ```
-$ mkdir homestead && \
-    cd homestead && \
-    composer require --prefer-source laravel/homestead:dev-master
+  #CSG-BAZO Project
+  192.168.10.30 bazo.local
+  192.168.10.30 api.bazo.local
 ```
+- Create an empty folder somewhere (e.g. `/BAZO`) for your BAZO projects.
+- Open a [terminal](https://gitforwindows.org) and ``cd BAZO``
+- Clone these repos into the `/BAZO` folder
+```
+git clone https://github.com/julwil/bazo-vagrant
+git clone https://github.com/julwil/bazo-miner
+git clone https://github.com/julwil/bazo-client
+git clone https://github.com/julwil/bazo-block-explorer
+```
+- Open a terminal and cd into the bazo-vagrant folder `cd bazo-vagrant` 
+- Start the VM with `vagrant up`
+- After the provisioning of the VM is done, ssh into it with `vagrant ssh`
+- You will find your cloned bazo projects in:
+```
+/home/vagrant/go/src
+                  |__ bazo-miner
+                  |__ bazo-client
+                  |__ bazo-block-explorer
+```
+- Use the terminal to start bazo-miner, bazo-client (rest) and bazo-block-explorer in the VM. Hint: You can open as many terminal sessions with the VM as you like. Just open an new terminal and run `vagrant ssh` in the `bazo-vagrant` folder to connect to it.
+- Open a web browser and navigate to http://bazo.local.
 
-After it's complete, `vendor/laravel/homestead` will be a git checkout and can be used normally.
+###Additional resources
+This vagrant box is based on the laravel/homestaed box. 
+https://laravel.com/docs/7.x/homestead

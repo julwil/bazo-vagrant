@@ -24,3 +24,18 @@
 # Install Node.js v10.x
 #curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 #sudo apt-get install -y nodejs
+
+echo "Installing GO -v 14.6.1..."
+
+wget https://golang.org/dl/go1.14.6.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.14.6.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+echo "export TOS=/opt/tinyos-2.x/tos" >> ~/.bashrc # Install go system wide.
+
+echo "Done!"
+
+echo "Installing PostgreSql..."
+
+sudo apt install postgresql postgresql-contrib
+
+echo "Done!"
