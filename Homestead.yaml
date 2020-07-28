@@ -1,0 +1,31 @@
+ip: 192.168.10.30
+memory: 4096
+cpus: 4
+provider: virtualbox
+authorize: ~/.ssh/id_rsa.pub
+keys:
+    - ~/.ssh/id_rsa
+folders:
+    - map: ../bazo-miner
+      to: /home/vagrant/go/src/bazo-miner
+    - map: ../bazo-client
+      to: /home/vagrant/go/src/bazo-client
+    - map: ../bazo-block-explorer
+      to: /home/vagrant/go/src/bazo-block-explorer
+sites:
+    - map: bazo.local
+      to: 8080
+      type: proxy
+    - map: api.bazo.local
+      to: 8010
+      type: proxy
+databases:
+    - bazo
+features:
+    - mysql8: true
+name: bazo-vagrant
+hostname: bazo-vagrant
+backup: true
+variables:
+    - key: APP_ENV
+      value: local
