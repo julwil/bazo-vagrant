@@ -29,10 +29,11 @@ git clone https://github.com/julwil/bazo-block-explorer
 - After the provisioning of the VM is done, ssh into it with `vagrant ssh`
 - You will find the cloned bazo projects in:
 ```
-/home/vagrant/go/src
-                  |__ bazo-miner
-                  |__ bazo-client
-                  |__ bazo-block-explorer
+~/go/
+  |-- src/
+        |-- bazo-miner
+        |-- bazo-client
+        |-- bazo-block-explorer
 ```
 - Use the terminal to start bazo-miner, bazo-client (rest) and bazo-block-explorer in the VM. Hint: You can open as many terminal sessions with the VM as you like. Just open an new terminal and run `vagrant ssh` in the `bazo-vagrant` folder to connect to it.
 - Open a web browser and navigate to http://bazo.local.
